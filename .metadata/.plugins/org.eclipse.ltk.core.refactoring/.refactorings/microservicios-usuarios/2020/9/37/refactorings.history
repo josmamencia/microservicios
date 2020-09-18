@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;alumnpDB&apos; in &apos;es.alimarket.microservicios.app.usuarios.controllers.AlumnoController.crear(...)&apos; to &apos;alumnoDB&apos;&#x0A;- Original project: &apos;microservicios-usuarios&apos;&#x0A;- Original element: &apos;es.alimarket.microservicios.app.usuarios.controllers.AlumnoController.crear(Alumno).alumnpDB&apos;&#x0A;- Renamed element: &apos;alumnpDB&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;alumnpDB&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;es.alimarket.microservicios.app.usuarios.controllers{AlumnoController.java[AlumnoController~crear~QAlumno;@alumnpDB!1314!1358!1321!1328!QAlumno;!0!false" name="alumnoDB" references="true" stamp="1599752701339" version="1.0"/>
+</session>
