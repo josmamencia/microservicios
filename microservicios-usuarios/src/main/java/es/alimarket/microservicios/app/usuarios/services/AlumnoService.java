@@ -1,16 +1,9 @@
 package es.alimarket.microservicios.app.usuarios.services;
 
-import java.util.Optional;
 
-import es.alimarket.microservicios.app.usuarios.models.entity.Alumno;
+import es.alimarket.microservicios.commons.alumnos.models.entity.Alumno;
+import es.alimarket.microservicios.commons.services.CommonService;
 
-public interface AlumnoService {
+public interface AlumnoService extends CommonService<Alumno>{
 
-	public Iterable<Alumno> findAll();
-	
-	public Optional<Alumno> findById(Long id);
-	
-	public Alumno save(Alumno alumno);
-	
-	public void deleteById (Long id);
 }
