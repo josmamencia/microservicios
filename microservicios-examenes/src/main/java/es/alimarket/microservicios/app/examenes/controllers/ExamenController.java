@@ -1,6 +1,8 @@
 package es.alimarket.microservicios.app.examenes.controllers;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.alimarket.microservicios.app.examenes.models.entity.Examen;
+import es.alimarket.microservicios.app.examenes.models.entity.Pregunta;
 import es.alimarket.microservicios.app.examenes.services.ExamenService;
 import es.alimarket.microservicios.commons.controllers.CommonController;
 
@@ -27,9 +30,12 @@ public class ExamenController extends CommonController<Examen, ExamenService> {
 		examenDB.setNombre(examen.getNombre());
 		
 		// Eliminar las preguntas que no vienen
-		examenDB.getPreguntas().stream()
-								.filter(pdb -> !examen.getPreguntas().contains(pdb))
-								.forEach(examenDB::removePregunta);
+		List<Pregunta> eliminadas = examenDB.getPreguntas()
+	    		.stream()
+	    		.filter(pdb -> !examen.getPreguntas().contains(pdb))
+	    		.collect(Collectors.toList());
+	     
+	    eliminadas.forEach(examenDB::removePregunta);
 		
 		// Añadir preguntas recibidas
 		examenDB.setPreguntas(examen.getPreguntas());
