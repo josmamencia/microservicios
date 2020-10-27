@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-    <typeInfo handle="=microservicios-usuarios/C:\/Users\/josma\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.3.3.RELEASE\/spring-data-commons-2.3.3.RELEASE.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/2.3.3.RELEASE=/=/maven.scope=/compile=/&lt;org.springframework.data.repository(CrudRepository.class[CrudRepository" modifiers="1537" timestamp="1600423884322"/>
-    <typeInfo handle="=microservicios-examenes/C:\/Users\/josma\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.3.4.RELEASE\/spring-data-commons-2.3.4.RELEASE.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/2.3.4.RELEASE=/=/maven.scope=/compile=/&lt;org.springframework.data.repository(CrudRepository.class[CrudRepository" modifiers="1537" timestamp="1600954307234"/>
-    <typeInfo handle="=microservicios-examenes/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;es.alimarket.microservicios.app.examenes.services{ExamenService.java[ExamenService" modifiers="513" timestamp="1603185675141"/>
-    <typeInfo handle="=commons-microservicios/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;es.alimarket.microservicios.commons.controllers{CommonController.java[CommonController" modifiers="1" timestamp="1600957031366"/>
-</typeInfoHistroy>
