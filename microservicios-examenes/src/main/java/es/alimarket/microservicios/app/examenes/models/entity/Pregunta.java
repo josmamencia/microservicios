@@ -19,7 +19,7 @@ public class Pregunta {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String name;
+	private String texto;
 	
 	@JsonIgnoreProperties(value = {"preguntas"})
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -34,12 +34,12 @@ public class Pregunta {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTexto() {
+		return texto;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTexto(String texto) {
+		this.texto = texto;
 	}
 
 	public Examen getExamen() {
