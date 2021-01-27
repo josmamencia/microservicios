@@ -1,12 +1,33 @@
 package es.alimarket.microservicios.app.examenes.services;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-import es.alimarket.microservicios.app.examenes.models.entity.Examen;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import es.alimarket.microservicios.app.examenes.models.repository.AsignaturaRepository;
+import es.alimarket.microservicios.app.examenes.models.repository.ExamenRepository;
+import es.alimarket.microservicios.commons.examenes.models.entity.Asignatura;
+import es.alimarket.microservicios.commons.examenes.models.entity.Examen;
 import es.alimarket.microservicios.commons.services.CommonServiceImpl;
 
 @Service
-public class ExamenServiceImpl extends CommonServiceImpl<Examen, CrudRepository<Examen,Long>> implements ExamenService {
+public class ExamenServiceImpl extends CommonServiceImpl<Examen, ExamenRepository> implements ExamenService {
+
+	@Autowired
+	private AsignaturaRepository asignaturaRepository;
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Examen> findByNombre(String term) {
+		return repository.findByNombre(term);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Asignatura> findAllAsignaturas() {
+		return asignaturaRepository.findAll();
+	}
 
 }

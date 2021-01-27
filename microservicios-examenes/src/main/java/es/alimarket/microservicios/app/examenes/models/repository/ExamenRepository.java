@@ -1,9 +1,14 @@
 package es.alimarket.microservicios.app.examenes.models.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
-import es.alimarket.microservicios.app.examenes.models.entity.Examen;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface ExamenRepository extends CrudRepository<Examen, Long> {
+import es.alimarket.microservicios.commons.examenes.models.entity.Examen;
 
+public interface ExamenRepository extends PagingAndSortingRepository<Examen, Long> {
+
+	@Query("select e from Examen as e where e.nombre like %?1%")
+	public List<Examen> findByNombre(String term);
 }

@@ -1,4 +1,4 @@
-package es.alimarket.microservicios.app.examenes.models.entity;
+package es.alimarket.microservicios.commons.examenes.models.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,13 +11,17 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table (name = "examenes")
@@ -26,11 +30,16 @@ public class Examen {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty
 	private String nombre;
 	
 	@Column(name = "create_at")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date crateAt;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@NotNull
+	private Asignatura asignatura;
 	
 	@PrePersist
 	public void prePersist() {
@@ -71,6 +80,14 @@ public class Examen {
 		this.crateAt = crateAt;
 	}
 
+	public Asignatura getAsignatura() {
+		return asignatura;
+	}
+
+	public void setAsignatura(Asignatura asignatura) {
+		this.asignatura = asignatura;
+	}
+
 	public List<Pregunta> getPreguntas() {
 		return preguntas;
 	}
@@ -89,5 +106,20 @@ public class Examen {
 		this.preguntas.remove(pregunta);
 		pregunta.setExamen(null);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		
+		if (!(obj instanceof Examen))
+			return false;
+		
+		Examen a = (Examen) obj;
+		
+		return (this.id != null && a.getId() != null && this.id.equals(a.getId()));
+	}
+	
+	
 	
 }

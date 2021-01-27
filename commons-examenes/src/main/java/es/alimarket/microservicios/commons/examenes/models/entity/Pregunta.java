@@ -1,4 +1,4 @@
-package es.alimarket.microservicios.app.examenes.models.entity;
+package es.alimarket.microservicios.commons.examenes.models.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
